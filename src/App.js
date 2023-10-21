@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Input, Button, Row, Col, Card, Avatar, Menu } from "antd";
+import { Input, Button, Row, Col, Card, Avatar } from "antd";
 import { Header } from "antd/es/layout/layout";
+import { GithubOutlined } from "@ant-design/icons";
 
 
 const App = () => {
@@ -30,19 +31,20 @@ const App = () => {
           zIndex: 1,
           width: '100%',
           display: 'flex',
+          justifyContent: 'space-between',
           alignItems: 'center',
+          padding: '10px 20px',
+          background: '#001529', // Set the background color as desired
+          color: 'white', // Set the text color
         }}
       >
-        <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={new Array(3).fill(null).map((_, index) => ({
-            key: String(index + 1),
-            label: `nav ${index + 1}`,
-          }))}
-        />
+        <div>
+          <GithubOutlined style={{ fontSize: "24px", marginRight: "10px" }} />
+          {/* Add an icon on the left (GitHub icon) */}
+        </div>
+        <Button type="default">
+          About
+        </Button>
       </Header>
 
       <div style={{ padding: "20px" }}>
